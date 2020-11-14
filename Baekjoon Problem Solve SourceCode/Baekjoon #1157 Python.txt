@@ -1,0 +1,21 @@
+w = input()
+w = w.lower()
+
+w_list = list(w)
+list_words = list(set(w))
+
+num_words = []
+
+for i in list_words:
+    num_words.append([w_list.count(i), i])
+
+max_string = []
+
+for i in range(len(num_words)):
+    if num_words[i][0] == max(num_words)[0]:
+        max_string.append(num_words[i][1])
+
+if len(max_string) > 1:
+    print('?')
+else:
+    print(max(num_words)[1].upper())
