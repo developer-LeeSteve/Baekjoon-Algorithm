@@ -1,0 +1,18 @@
+import sys
+
+A = int(sys.stdin.readline())
+B = int(sys.stdin.readline())
+
+listB = [int(i) for i in str(B)]
+
+nth_num = 2
+nth_digit = 1
+sumlist = []
+
+for i in listB:
+	sum_num = A*int(listB[nth_num])*nth_digit
+	print(int(sum_num/nth_digit))
+	nth_num -= 1
+	nth_digit *= 10
+	sumlist.append(sum_num)
+print(sum(sumlist))
