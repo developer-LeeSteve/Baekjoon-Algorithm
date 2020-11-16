@@ -1,0 +1,10 @@
+import sys
+
+A, B = map(int, sys.stdin.readline().split())
+
+first_num = list(str(A))
+second_num = list(str(B))
+
+final_list = [int(''.join(first_num[::-1])), int(''.join(second_num[::-1]))]
+
+print(max(final_list))
