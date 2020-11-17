@@ -1,0 +1,8 @@
+import sys
+
+N = int(sys.stdin.readline())
+
+num1 = 1
+for i in range(9):
+	print(str(N) + ' * ' + str(num1) + ' = ' + str(N*num1))
+	num += 1
