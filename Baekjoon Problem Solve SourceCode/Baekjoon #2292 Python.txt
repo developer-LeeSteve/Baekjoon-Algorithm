@@ -1,0 +1,22 @@
+import sys
+
+N = int(sys.stdin.readline())
+
+door = 2
+lowest_num = 2
+highest_num = 7
+addition = 6
+
+while True:
+    if N == 1:
+        print(1)
+        break
+    elif N != 1:
+        if N in range(lowest_num, highest_num+1):
+            print(door)
+            break
+        else:
+            lowest_num += addition
+            addition += 6
+            highest_num += addition
+            door += 1
