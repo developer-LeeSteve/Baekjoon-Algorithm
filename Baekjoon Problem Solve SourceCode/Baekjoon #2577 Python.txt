@@ -1,0 +1,16 @@
+import sys
+
+num_list = []
+standard_num = 1
+
+for i in range(3):
+	num = int(sys.stdin.readline())
+	num_list.append(num)
+
+for j in range(len(num_list)):
+	standard_num *= num_list[j]
+
+integer_list = [int(x) for x in str(standard_num)]
+
+for k in range(10):
+	print(integer_list.count(k))
