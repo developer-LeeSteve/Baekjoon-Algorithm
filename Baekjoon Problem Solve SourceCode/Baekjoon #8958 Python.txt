@@ -1,0 +1,15 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+for i in range(T):
+	ans_str = sys.stdin.readline()
+	ans_sum = 0
+	ans_count = 0
+	for j in range(len(ans_str)):
+		if ans_str[j] == 'O':
+			ans_count += 1
+			ans_sum += ans_count
+		elif ans_str[j] == 'X':
+			ans_count = 0
+	print(ans_sum)
