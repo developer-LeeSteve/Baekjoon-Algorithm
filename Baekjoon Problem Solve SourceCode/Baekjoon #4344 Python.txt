@@ -1,0 +1,14 @@
+import sys
+
+C = int(sys.stdin.readline())
+
+for i in range(C):
+	score_list = list(map(int, sys.stdin.readline().split()))
+	score_sum = sum(score_list[1:])
+	num_score = score_list[0]
+	score_avg = score_sum/num_score
+	num_above = 0
+	for i in score_list[1:]:
+		if i > score_avg:
+			num_above += 1
+	print("%.3f" %((num_above/num_score)*100) + '%')
