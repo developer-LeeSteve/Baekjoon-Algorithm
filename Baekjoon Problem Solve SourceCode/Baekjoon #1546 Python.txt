@@ -1,0 +1,13 @@
+import sys
+
+N = int(sys.stdin.readline())
+
+original_list = list(map(int, sys.stdin.readline().split()))
+new_list = []
+
+max_num = max(original_list)
+
+for i in original_list:
+	new_list.append((i/max_num)*100)
+
+print((sum(new_list))/N)
