@@ -1,0 +1,11 @@
+import sys
+
+N = int(sys.stdin.readline())
+
+sum_answer = 0
+answer = str(int(sys.stdin.readline()))
+
+for i in answer:
+	sum_answer += int(i)
+
+print(sum_answer)
