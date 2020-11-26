@@ -1,0 +1,8 @@
+import sys
+
+W = sys.stdin.readline()
+
+if type(W) == str:
+	print(ord(W))
+elif type(W) == int:
+	print(chr(W))
