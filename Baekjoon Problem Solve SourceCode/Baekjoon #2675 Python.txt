@@ -1,0 +1,11 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+for i in range(T):
+	answer = ''
+	int_num = list(map(str, input().split()))
+	for j in int_num[1]:
+		answer += j*int(int_num[0])
+
+print(answer)
