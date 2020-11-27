@@ -1,0 +1,9 @@
+import re
+import sys
+
+word = str(sys.stdin.readline().strip())
+new_word = word.lower()
+w = re.compile('[a-z]+')
+m = w.findall(new_word)
+
+print(len(m))
