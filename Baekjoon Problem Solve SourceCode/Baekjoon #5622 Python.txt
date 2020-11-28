@@ -1,0 +1,14 @@
+import sys
+
+phone = [[3, 'ABC'], [4, 'DEF'], [5, 'GHI'], [6, 'JKL'], [7, 'MNO'], [8, 'PQRS'], [9, 'TUV'], [10, 'WXYZ']]
+
+word = str(sys.stdin.readline().strip())
+word_list = list(word)
+count = 0
+
+for i in range(len(word_list)):
+	for j in range(len(phone)):
+		if word_list[i] in phone[j][1]:
+			count += phone[j][0]
+
+print(count)
