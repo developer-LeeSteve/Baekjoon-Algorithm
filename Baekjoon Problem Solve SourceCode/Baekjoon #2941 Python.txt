@@ -1,0 +1,10 @@
+import sys
+
+N = str(sys.stdin.readline().strip())
+num_alpha = ['c=', 'c-', 'dz=', 'd-', 'lj', 'nj', 's=', 'z=']
+
+for i in range(len(num_alpha)):
+	for j in range(N.count(num_alpha[i])):
+		N = N.replace(num_alpha[i], 'p')
+
+print(len(N))
