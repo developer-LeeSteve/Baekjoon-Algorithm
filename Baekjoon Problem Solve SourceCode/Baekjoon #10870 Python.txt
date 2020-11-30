@@ -1,0 +1,11 @@
+import sys
+
+fb = [0, 1, 1]
+N = int(sys.stdin.readline())
+
+if N < 3:
+	print(fb[N])
+else:
+	for i in range(N-2):
+		fb.append(fb[-2] + fb[-1])
+	print(fb[-1])
