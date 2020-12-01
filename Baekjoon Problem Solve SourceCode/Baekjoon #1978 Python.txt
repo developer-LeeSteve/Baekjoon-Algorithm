@@ -1,0 +1,23 @@
+import sys
+
+N = int(sys.stdin.readline())
+
+numbers_list = list(map(int, sys.stdin.readline().split()))
+
+all_num = [x for x in range(2, max(numbers_list)+1)]
+prime_num = []
+
+for i in range(2, max(numbers_list)+1):
+	if i in all_num:
+		prime_num.append(i)
+		for j in range(len(all_num)):
+			if all_num[j]%i == 0 and all_num[j] != i:
+				all_num[j] = 0
+
+prime_count = 0
+
+for k in numbers_list:
+	if k in prime_num:
+		prime_count += 1
+
+print(prime_count)
