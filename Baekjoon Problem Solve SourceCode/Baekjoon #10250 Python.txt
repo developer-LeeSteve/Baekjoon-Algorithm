@@ -1,0 +1,16 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+for i in range(T):
+	H, W, N = map(int, sys.stdin.readline().split())
+	if N%H == 0:
+		if len(list(str(N//H))) == 1:
+			print(str(H) + '0' + str(N//H))
+		else:
+			print(str(H) + str(N//H))
+	else:
+		if len(list(str((N//H)+1))) == 1:
+			print(str(N%H) + '0' + str((N//H)+1))
+		else:
+			print(str(N%H) + str((N//H)+1))
