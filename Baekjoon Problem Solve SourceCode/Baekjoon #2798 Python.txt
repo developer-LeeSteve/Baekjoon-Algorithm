@@ -1,0 +1,17 @@
+import sys
+
+N, M = map(int, sys.stdin.readline().split())
+
+cards_list = list(map(int, sys.stdin.readline().split()))
+
+sum_list = []
+
+for i in range(len(cards_list)-2):
+	for j in range(i+1, len(cards_list)-1):
+		for k in range(j+1, len(cards_list)):
+			if cards_list[i]+cards_list[j]+cards_list[k] > M:
+				pass
+			else:
+				sum_list.append(cards_list[i]+cards_list[j]+cards_list[k])
+
+print(sorted(sum_list)[-1])
