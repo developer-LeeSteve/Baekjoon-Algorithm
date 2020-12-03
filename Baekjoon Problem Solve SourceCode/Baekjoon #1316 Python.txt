@@ -1,0 +1,19 @@
+import sys
+
+N = int(sys.stdin.readline())
+
+def group_check(word):
+	for i in range(len(word)-2):
+		for j in range(i+2, len(word)):
+			if word[i] == word[j] and word[i] != word[i+1]:
+				return False
+	return True
+
+count = 0
+
+for i in range(N):
+	word= str(sys.stdin.readline().strip())
+	if group_check(word):
+		count += 1
+
+print(count)
