@@ -1,0 +1,6 @@
+import sys, math
+
+N = int(sys.stdin.readline())
+
+print("%.5f" %(N*N*math.pi))
+print("%.5f" %(2*N*N))
