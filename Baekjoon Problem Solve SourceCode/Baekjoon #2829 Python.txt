@@ -1,0 +1,18 @@
+import sys
+
+N = int(sys.stdin.readline())
+
+Q_5 = N//5
+Q_3 = N//3
+
+possible_list = []
+
+for i in reversed(range(Q_5+1)):
+	for j in range(Q_3+1):
+		if i*5 + j*3 == N:
+			possible_list.append(i+j)
+
+if len(possible_list) == 0:
+	print(-1)
+else:
+	print(min(possible_list))
