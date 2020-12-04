@@ -1,0 +1,12 @@
+import sys
+
+N = int(sys.stdin.readline())
+
+constructor_list = []
+
+for i in range(1, 1000001):
+	if i+sum([int(x) for x in list(str(i))]) == N:
+		print(i)
+		break
+else:
+	print(0)
