@@ -1,0 +1,16 @@
+import sys
+
+N = int(sys.stdin.readline())
+
+apart_people = [[x for x in range(15)]]
+
+for i in range(15):
+	floor = []
+	for j in range(15):
+		floor.append(sum((apart_people[-1])[:j+1]))
+	apart_people.append(floor)
+
+for j in range(N):
+	k = int(sys.stdin.readline())
+	n = int(sys.stdin.readline())
+	print(apart_people[k][n])
