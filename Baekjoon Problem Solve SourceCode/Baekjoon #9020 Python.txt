@@ -1,0 +1,28 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+prime_set = set(range(2, 10001))
+for i in range(2, 10001):
+	for j in range(2, int(i**(1/2))+1):
+		if i%j == 0:
+			prime_set -= set(range(j*2, 10001, j))
+
+def is_prime(n):
+	if n in prime_set:
+		return True
+	else:
+		return False
+
+for i in range(T):
+	n = int(sys.stdin.readline())
+	half_num = n//2
+	count = 0
+	for i in range(n//2):
+		small_prime = half_num-count
+		big_prime = half_num+count
+		if is_prime(small_prime) and is_prime(big_prime):
+			print("%d %d" %(small_prime, big_prime))
+			break
+		else:
+c			ount += 1
