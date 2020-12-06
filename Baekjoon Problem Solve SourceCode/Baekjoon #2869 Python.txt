@@ -1,0 +1,9 @@
+import sys
+
+a, b, v = map(int, sys.stdin.readline().split())
+i = (v-b)/(a-b)
+
+if i == int(i):
+	print(int(i))
+else:
+	print(int(i)+1)
