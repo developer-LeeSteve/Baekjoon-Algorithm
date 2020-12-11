@@ -1,0 +1,12 @@
+import sys
+
+N = int(sys.stdin.readline())
+people = []
+
+for i in range(N):
+    age, name = sys.stdin.readline().split()
+    people.append([int(age), name, i])
+people.sort(key=lambda x: (x[0], x[2]))
+for j in people:
+    j[0] = str(j[0])
+    print(' '.join(j[:2]))
