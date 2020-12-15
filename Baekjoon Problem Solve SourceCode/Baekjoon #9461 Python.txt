@@ -1,0 +1,10 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+first_five = [1,1,1,2,2]
+for i in range(95):
+    first_five.append(first_five[i+4] + first_five[i])
+
+for i in range(T):
+    print(first_five[int(sys.stdin.readline())-1])
