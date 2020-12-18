@@ -1,0 +1,18 @@
+import sys
+
+N, K = map(int, sys.stdin.readline().split())
+values = []
+for i in range(N):
+    value = int(sys.stdin.readline())
+    if value <= K:
+        values.append(value)
+values.sort(reverse=True)
+count = 0
+for j in values:
+    if K >= j:
+        num = K//j
+        K -= j*num
+        count += num
+    else:
+        continue
+print(count)
