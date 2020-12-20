@@ -1,0 +1,11 @@
+import sys
+
+N = int(sys.stdin.readline())
+net_time = 0
+
+times = list(map(int, sys.stdin.readline().split()))
+times.sort()
+
+for i in range(N):
+    net_time += sum(times[:i+1])
+print(net_time)
