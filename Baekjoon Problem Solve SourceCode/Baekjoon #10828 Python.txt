@@ -1,0 +1,28 @@
+import sys
+
+N = int(sys.stdin.readline())
+nums = []
+
+for i in range(N):
+    a = sys.stdin.readline().strip()
+    if a.split( )[0] == 'push':
+        nums.append(a.split( )[1])
+    elif a == 'top':
+        if len(nums) == 0:
+            print(-1)
+        else:
+            print(nums[-1])
+    elif a == 'size':
+        print(len(nums))
+    elif a == 'empty':
+        if len(nums) == 0:
+            print(1)
+        else:
+            print(0)
+    elif a == 'pop':
+        if len(nums) == 0:
+            print(-1)
+        else:
+            print(nums[-1])
+            del nums[-1]
+        
