@@ -1,0 +1,13 @@
+import sys
+
+a, b = map(int, sys.stdin.readline().split())
+N = 1
+K = 1
+
+for i in range(b):
+    N *= a-i
+
+for i in range(b):
+    N = N//(b-i)
+
+print(N%10007)
