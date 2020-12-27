@@ -1,0 +1,12 @@
+import sys
+
+N = int(sys.stdin.readline())
+nums = []
+
+for i in range(N):
+    a = int(sys.stdin.readline())
+    if a == 0 and len(nums) != 0:
+        del nums[-1]
+    else:
+        nums.append(a)
+print(sum(nums))
