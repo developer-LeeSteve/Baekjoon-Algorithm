@@ -1,0 +1,11 @@
+import sys
+
+a, b = map(int, sys.stdin.readline().split())
+N = 1
+K = 1
+
+for i in range(b):
+    N *= a-i
+    K *= b-i
+
+print(int(N/K))
