@@ -1,0 +1,25 @@
+import sys
+
+N = int(sys.stdin.readline())
+
+for i in range(N):
+    a = sys.stdin.readline().strip()
+    left_count = 0
+    right_count = 0
+    if a[-1] != ')':
+        print('NO')
+    elif a[0] != '(':
+        print('NO')
+    elif a.count('(') != a.count(')'):
+        print('NO')
+    else:
+        for i in a[::-1]:
+            if i == '(':
+                left_count += 1
+            elif i == ')':
+                right_count += 1
+            if left_count > right_count:
+                print('NO')
+                break
+        else:
+            print('YES')
