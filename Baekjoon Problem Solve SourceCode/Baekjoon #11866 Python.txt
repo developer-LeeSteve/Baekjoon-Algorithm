@@ -1,0 +1,12 @@
+import sys
+from collections import deque
+
+N, K = map(int, sys.stdin.readline().split())
+q = deque([x for x in range(1, N+1)])
+output = []
+
+while len(output) < N:
+    q.rotate(-(K-1))
+    output.append(q[0])
+    q.popleft()
+print('<' + ', '.join([str(x) for x in output]) + '>')
