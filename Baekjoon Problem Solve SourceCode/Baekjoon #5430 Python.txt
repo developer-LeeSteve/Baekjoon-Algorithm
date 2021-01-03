@@ -1,0 +1,30 @@
+import sys
+from collections import deque
+
+T = int(sys.stdin.readline())
+
+for i in range(T):
+    p = sys.stdin.readline().strip()
+    n = int(sys.stdin.readline())
+    arr = deque(sys.stdin.readline().strip()[1:-1].split(','))
+    count = 0
+    tf = True
+    for j in p:
+        if j == 'R':
+            count += 1
+        elif j == 'D':
+            if not arr or arr == deque(['']):
+                tf = False
+                break
+            if count % 2 == 0:
+                arr.popleft()
+            elif count % 2 != 0:
+                arr.pop()
+    if not tf:
+        print("error") 
+    else:
+        if count % 2 == 0:
+            print("[" + ','.join(arr) + "]")
+        else:
+            arr.reverse()
+            print("[" + ','.join(arr) + "]")
