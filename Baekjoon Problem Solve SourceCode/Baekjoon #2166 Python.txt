@@ -1,0 +1,19 @@
+import sys
+
+N = int(sys.stdin.readline())
+coordinates = []
+sums = 0
+
+def shoe_line(a, b):
+    answer = a[0]*b[1] - a[1]*b[0]
+    return answer
+
+for i in range(N):
+    coordinates.append(list(map(int, sys.stdin.readline().split())))
+
+for j in range(N):
+    if j == N-1:
+        sums += shoe_line(coordinates[j], coordinates[0])
+    else:
+        sums += shoe_line(coordinates[j], coordinates[j+1])
+print("%.1f" %abs(sums/2))
