@@ -1,0 +1,17 @@
+import sys
+
+N = int(sys.stdin.readline())
+
+a, b = 1, 2
+temp = 0
+
+if N == 1:
+    print(a)
+if N == 2:
+    print(b)
+if N > 2:
+    for i in range(N-2):
+        temp = a
+        a = b
+        b = (a + temp)%15746
+    print(b)
