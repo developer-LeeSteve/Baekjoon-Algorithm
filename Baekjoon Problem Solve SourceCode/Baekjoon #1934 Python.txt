@@ -1,0 +1,15 @@
+import sys
+
+N = int(sys.stdin.readline())
+
+GCN = 1
+
+for i in range(N):
+    a, b = map(int, sys.stdin.readline().split())
+    for j in reversed(range(1, int((max(a, b)))+1)):
+        if a%j == 0 and b%j == 0:
+            a = int(a/j)
+            b = int(b/j)
+            GCN *= j
+    print(GCN*a*b)
+    GCN = 1
