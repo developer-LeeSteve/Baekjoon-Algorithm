@@ -1,0 +1,17 @@
+import sys
+
+while True:
+    N = int(sys.stdin.readline())
+    driven_miles = []
+    driven = 0
+    if N == -1:
+        break
+    for i in range(N):
+        a, b = map(int, sys.stdin.readline().split())
+        if i == 0:
+            driven_miles.append([a, b])
+            driven += a*b
+        elif i != 0:
+            driven_miles.append([a, b])
+            driven += a*(b-driven_miles[i-1][1])
+    print(str(driven) + " miles")
