@@ -1,0 +1,12 @@
+import sys
+
+colors = ['black', 'brown', 'red', 'orange', 'yellow', 'green', 'blue', 'violet', 'grey', 'white']
+
+A = str(sys.stdin.readline().strip())
+B = str(sys.stdin.readline().strip())
+C = str(sys.stdin.readline().strip())
+
+if A == 'black':
+    print(int(str(colors.index(B)))*(10**colors.index(C)))
+else:
+    print(int(str(colors.index(A)) + str(colors.index(B)))*(10**colors.index(C)))
