@@ -1,0 +1,36 @@
+import sys
+
+N = int(sys.stdin.readline())
+
+years = [x for x in range(2014, 3000) if (x%4 == 0 and x%100 != 0) or x%400 == 0]
+
+y = 2014
+m = 4
+d = 1
+
+for i in range(N):
+    if d == 28 and m == 2 and y not in years:
+        d = 1
+        m += 1
+    elif d == 29 and m == 2 and y in years:
+        d = 1
+        m += 1
+    elif d == 31 and m in [1, 3, 5, 7, 8, 10]:
+        d = 1
+        m += 1
+    elif d == 30 and m in [4, 6, 9, 11]:
+        d = 1
+        m += 1
+    elif d == 31 and m == 12:
+        y += 1
+        d = 1
+        m = 1
+    else:
+        d += 1
+
+if m < 10:
+    m = '0'+str(m)
+if d < 10:
+    d = '0'+str(d)
+
+print(str(y)+'-'+str(m)+'-'+str(d))
